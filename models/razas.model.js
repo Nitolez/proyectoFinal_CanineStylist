@@ -4,7 +4,7 @@ const queries = require('../queries/razas.queries');
 
 //GET Raza models
 
-const getRazaByNombre = async (email) => {
+const getRazaByNombre = async (nombre) => {
     let client, result;
     try {
         client = await pool.connect(); // Espera a abrir conexion
@@ -19,7 +19,7 @@ const getRazaByNombre = async (email) => {
     return result;
 };
 
-const getAllRazas = async (email) => {
+const getAllRazas = async () => {
     let client, result;
     try {
         client = await pool.connect(); // Espera a abrir conexion
@@ -95,7 +95,7 @@ module.exports = {
 
 
 /* EJEMPLOS DE USO 
-POST
+POST http://localhost3000/api/razas
 {
     "nombre": "Labrador",
     "descripcion": "Un perro amigable y enérgico",
@@ -104,7 +104,7 @@ POST
 
 PUT
 
-URL Example: PUT http://localhost3000/api/razas/1
+URL Example: PUT http://localhost3000/api/razas/Labrador
 {
     "nombre": "Labrador Retriever",
     "descripcion": "Un perro muy amigable y enérgico",
@@ -113,6 +113,6 @@ URL Example: PUT http://localhost3000/api/razas/1
 
 DELETE
 
-URL Example: DELETE http://localhost3000/api/razas/1
+URL Example: DELETE http://localhost3000/api/razas/Labrador
 
 */
