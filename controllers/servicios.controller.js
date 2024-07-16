@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 const getAllServicios = async (req, res) => {
     try {
         const servicios = await servicio.getAllServicios();
-        res.status(200).json(servicio);
+        res.status(200).json(servicios);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

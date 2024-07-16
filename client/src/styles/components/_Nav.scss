@@ -1,0 +1,29 @@
+@import "../utils/variables.scss";
+
+nav{
+    background-color: $azulClaro;
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    padding: 40px 0px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    &>ul{
+        margin: 0px 20px;
+        padding: 0px;
+        display: flex;
+        justify-content: space-around;
+        &>li{
+            display: flex;
+        }
+    }
+
+
+}
+
+a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
