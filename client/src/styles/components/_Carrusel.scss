@@ -11,6 +11,21 @@ main {
 }
 .carrusel {
   padding-bottom: 60px;
+  &>.titulo4 {
+    &>h2{
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: $rosaOscuro;
+    }
+    &>img{
+      width: 70%;
+    }
+    &>p{
+      font-size: 20px;
+      color: $azulClaro;
+      margin-bottom: 80px;
+    }
+  }
 }
 
 .titulo {
@@ -116,6 +131,5 @@ main {
         font-size: 40px;
         text-align: center;
         flex: 1;
-        padding-bottom: 40px;
       }
 }

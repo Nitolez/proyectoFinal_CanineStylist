@@ -1,0 +1,38 @@
+@import "../utils/variables.scss";
+
+input{
+    -webkit-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    border-radius: 30px;
+    display: flex;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    background-color: grey;
+    color: white;
+}
+
+button{
+    border-radius: 30px;
+    display: flex;
+    width: 10%;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: $azulClaro;
+    color: white;
+}
+
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}

@@ -1,0 +1,33 @@
+.colaboradoresDiv{
+    &>h2{
+        text-align: center;
+        padding-bottom: 40px;
+    }
+}
+
+.colaboradores{
+    margin-left: -53px;
+    margin-right: -53px;
+    background-color: $rosaClaro;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    -webkit-box-shadow: 0px 0px 18px 1px grey;
+    -moz-box-shadow: 0px 0px 18px 1px rgb(38, 35, 35);
+    box-shadow: 0px 0px 18px 1px grey;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    
+}
+
+.artero, .naturalGreatness{
+
+    text-align: center;
+
+    &>a>img{
+        width: 450px;
+        padding: 40px 2px;
+    }
+}
