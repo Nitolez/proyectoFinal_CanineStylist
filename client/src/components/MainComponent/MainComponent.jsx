@@ -6,7 +6,7 @@ import Servicios from "./Servicios";
 import Precios from "./Precios";
 import Contacto from "./Contacto";
 import Login from "./Login";
-
+import Registro from "./Registro";
 
 const MainComponent = () => {
 
@@ -19,6 +19,7 @@ const MainComponent = () => {
         <Route path="/precios" element={<Precios />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
         <Route path="/*" element={<Navigate to={"/"} />} />
       </Routes>
 

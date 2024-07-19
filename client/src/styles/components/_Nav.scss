@@ -5,17 +5,24 @@ nav{
     width: 100%;
     display: block;
     max-width: 100%;
-    padding: 40px 0px;
+    padding: 40px 20px;
     color: white;
     text-decoration: none;
     font-size: 20px;
+    -webkit-box-shadow: 0px 0px 26px 4px rgba(10,19,97,1);
+    -moz-box-shadow: 0px 0px 26px 4px rgba(10,19,97,1);
+    box-shadow: 0px 0px 26px 4px rgba(10,19,97,1);
+
     &>ul{
         margin: 0px 20px;
         padding: 0px;
         display: flex;
         justify-content: space-around;
+        
         &>li{
             display: flex;
+            font-size: 80%;
+            
         }
     }
 

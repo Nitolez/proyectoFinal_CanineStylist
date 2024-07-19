@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express(); // Inicializar servidor
 const port = 3000;
+const cors =  require('cors');
+
+app.use(cors());
+
+//Importar middlewares
+const error404 = require("./middlewares/error404");
 
 // Importar Rutas API
 const rutasRazas = require('./routes/razas.routes');
@@ -15,6 +21,9 @@ app.use(express.static('public')); // Habilito la carpeta public para archivos e
 app.use('/api/razas', rutasRazas);
 app.use('/api/servicios', rutasServicios);
 app.use('/api/usuarios', rutasUsuarios);
+
+//Invocar middleware
+app.use(error404); //Middleware para manejo de 404
 
 
 const server = app.listen(port, () => { // Servidor está escuchando en este puerto variable port

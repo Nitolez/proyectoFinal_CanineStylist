@@ -10,7 +10,9 @@ function App() {
     <>
         <BrowserRouter>
           <Header />
+          <div className="fondo">
           <MainComponent />
+          </div>
         </BrowserRouter>
         <Footer />
     </>

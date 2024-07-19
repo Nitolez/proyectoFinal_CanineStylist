@@ -4,4 +4,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+
+}
+.fondo{
+    background-image: url('/fondo.png');
+    background-size: contain; 
+    background-repeat: repeat;
+
 }
