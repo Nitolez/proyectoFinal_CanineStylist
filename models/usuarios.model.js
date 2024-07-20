@@ -7,9 +7,9 @@ const queries = require('../queries/usuarios.queries.js');
 const getUsuarioByEmail = async (email) => {
     let client, result;
     try {
-        client = await pool.connect(); // Espera a abrir conexion
+        client = await pool.connect(); 
         const data = await client.query(queries.getUsuarioByEmail, [email]);
-        result = data.rows;
+        result = data.rows[0]; 
     } catch (err) {
         console.log(err);
         throw err;
@@ -40,9 +40,9 @@ const createUsuario = async (usuario) => {
     const { nombre, email, password, telefono, direccion } = usuario;
     let client, result;
     try {
-        client = await pool.connect(); // Espera a abrir conexion
+        client = await pool.connect();
         const data = await client.query(queries.createUsuario, [nombre, email, password, telefono, direccion]);
-        result = data.rowCount;
+        result = data.rows[0]; 
     } catch (err) {
         console.log(err);
         throw err;
