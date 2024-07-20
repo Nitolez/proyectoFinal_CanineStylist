@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm run dev"
+    plan: free
+    port: 3000
+
+  - type: static
+    name: frontend
+    buildCommand: "npm install && npm run build"
+    publishDirectory: "client/dist"
+    plan: free
