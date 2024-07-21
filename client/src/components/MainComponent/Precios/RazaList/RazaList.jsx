@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import RazaCard from "./RazaCard";
 import { v4 as uuidv4 } from "uuid";
 import { ProgressBar } from 'react-loader-spinner';
+import { API_URL } from '../../../../config/config'; 
 
 const RazaList = ({ razaName }) => {
   const [razaDetails, setRazaDetails] = useState([]);
@@ -11,7 +12,7 @@ const RazaList = ({ razaName }) => {
 
   const getRazaDetails = async (name) => {
     try {
-      const response = await axios.get("http://localhost:3000/api/razas");
+      const response = await axios.get(`${API_URL}/api/razas`);
       setLoading(false);
       return response.data;
     } catch (error) {
@@ -42,18 +43,20 @@ const RazaList = ({ razaName }) => {
   }, [razaName, razaDetails]);
 
   if (loading) {
-    return <div className='loader'>
-      <ProgressBar
-        visible={true}
-        height="300"
-        width="300"
-        ariaLabel="progress-bar-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        barColor="#FF82A9"
-        borderColor="#FFC0BE"
-      />
-    </div>;
+    return (
+      <div className='loader'>
+        <ProgressBar
+          visible={true}
+          height="300"
+          width="300"
+          ariaLabel="progress-bar-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          barColor="#FF82A9"
+          borderColor="#FFC0BE"
+        />
+      </div>
+    );
   }
 
   return (

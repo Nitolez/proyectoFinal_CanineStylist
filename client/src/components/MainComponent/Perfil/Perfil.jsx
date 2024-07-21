@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import bcrypt from 'bcryptjs';
 import { ProgressBar } from 'react-loader-spinner';
+import { API_URL } from '../../../../config/config'; 
 
 const Perfil = () => {
   const [usuario, setUsuario] = useState({
@@ -19,7 +20,7 @@ const Perfil = () => {
   useEffect(() => {
     const fetchUsuario = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/usuarios');
+        const response = await fetch(`${API_URL}/api/usuarios`);
         if (!response.ok) {
           throw new Error('Error fetching user data');
         }
@@ -56,7 +57,7 @@ const Perfil = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/usuarios/${usuario.email}`, {
+      const response = await fetch(`${API_URL}/api/usuarios/${usuario.email}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -78,18 +79,20 @@ const Perfil = () => {
   };
 
   if (loading) {
-    return <div className='loader'>
-      <ProgressBar
-        visible={true}
-        height="400"
-        width="400"
-        ariaLabel="progress-bar-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        barColor="#FF82A9"
-        borderColor="#FFC0BE"
-      />
-    </div>;
+    return (
+      <div className='loader'>
+        <ProgressBar
+          visible={true}
+          height="400"
+          width="400"
+          ariaLabel="progress-bar-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          barColor="#FF82A9"
+          borderColor="#FFC0BE"
+        />
+      </div>
+    );
   }
 
   if (error) {

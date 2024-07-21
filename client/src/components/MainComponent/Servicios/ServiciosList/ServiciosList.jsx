@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ServiciosCard from "./ServiciosCard";
 import { v4 as uuidv4 } from "uuid";
 import { ProgressBar } from 'react-loader-spinner';
+import { API_URL } from '../../../../config/config'; 
 
 const ServiciosList = () => {
   const [servicios, setServicios] = useState([]);
@@ -10,7 +11,7 @@ const ServiciosList = () => {
 
   const getServicios = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/servicios");
+      const response = await axios.get(`${API_URL}/api/servicios`);
       setLoading(false);
       return response.data;
     } catch (error) {
@@ -19,6 +20,7 @@ const ServiciosList = () => {
       return [];
     }
   };
+
   useEffect(() => {
     const fetchServicios = async () => {
       const serviciosData = await getServicios();
@@ -28,20 +30,22 @@ const ServiciosList = () => {
   }, []);
 
   if (loading) {
-    return <div className='loader'>
-      <ProgressBar
-        visible={true}
-        height="300"
-        width="300"
-        ariaLabel="progress-bar-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        barColor="#FF82A9"
-        borderColor="#FFC0BE"
-      />
-    </div>;
+    return (
+      <div className='loader'>
+        <ProgressBar
+          visible={true}
+          height="300"
+          width="300"
+          ariaLabel="progress-bar-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          barColor="#FF82A9"
+          borderColor="#FFC0BE"
+        />
+      </div>
+    );
   }
-  
+
   return (
     <>
       <article className="serviciosList">

@@ -1,8 +1,8 @@
-// Login.jsx
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
+import { API_URL } from '../../../../config/config'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/login', 
+      const response = await axios.post(`${API_URL}/login`, 
         { email, password },
         { withCredentials: true }
       );

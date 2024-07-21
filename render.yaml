@@ -8,7 +8,7 @@ services:
     port: 3000
     envVars:
       - key: DATABASE_URL
-        value: tu_base_de_datos_url
+        value: postgresql://nitolez:mUtVdue0CtEubGmOlhC4Kp0ZIZ4F1tX9@dpg-cqbdqetumphs73d2kthg-a.oregon-postgres.render.com/caninestylist
     healthCheckPath: "/api/health"
 
   - type: static
@@ -18,4 +18,4 @@ services:
     plan: free
     envVars:
       - key: VITE_API_URL
-        value: url-de-tu-backend-en-render
+        value: https://caninestylistapi.onrender.com

@@ -1,10 +1,21 @@
 services:
   - type: web
-    name: frontend-proyectofinal-caninestylist
-    env: static
+    name: backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
     plan: free
-    buildCommand: 'npm install && npm run build'
-    staticPublishPath: 'dist'
+    port: 3000
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://nitolez:mUtVdue0CtEubGmOlhC4Kp0ZIZ4F1tX9@dpg-cqbdqetumphs73d2kthg-a.oregon-postgres.render.com/caninestylist
+    healthCheckPath: "/api/health"
+
+  - type: static
+    name: frontend
+    buildCommand: "npm install && npm run build"
+    publishDirectory: "dist"
+    plan: free
     envVars:
       - key: VITE_API_URL
-        value: url-de-tu-backend-en-render
+        value: https://caninestylistapi.onrender.com

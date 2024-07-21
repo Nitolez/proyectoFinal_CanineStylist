@@ -10,7 +10,7 @@ const { Pool } = require('pg');
 const pool = require('./config/db.js');
 
 app.use(cors({
-  origin: 'https://tu-frontend-en-render.com',
+  origin: 'https://caninestylist.onrender.com',
   credentials: true
 }));
 

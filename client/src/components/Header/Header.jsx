@@ -5,6 +5,7 @@ import AdminNav from './AdminNav/AdminNav';
 import ClientNav from './ClientNav/ClientNav';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../../config/config'; // Importa la URL de la API desde la ruta correcta
 
 const Header = () => {
   const { userType, setUserType } = useContext(UserContext);
@@ -13,7 +14,7 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/logout', {}, { withCredentials: true });
+      await axios.post(`${API_URL}/logout`, {}, { withCredentials: true }); // Usa la URL de la API
       setUserType(null);
       navigate('/');
     } catch (error) {

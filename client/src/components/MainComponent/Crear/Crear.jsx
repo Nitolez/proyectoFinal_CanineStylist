@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_URL } from '../../../../config/config'; 
 
 const Crear = () => {
   const [servicio, setServicio] = useState({
@@ -31,7 +32,7 @@ const Crear = () => {
   const handleSubmitServicio = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/servicios', {
+      const response = await fetch(`${API_URL}/api/servicios`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const Crear = () => {
   const handleSubmitRaza = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/razas', {
+      const response = await fetch(`${API_URL}/api/razas`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
