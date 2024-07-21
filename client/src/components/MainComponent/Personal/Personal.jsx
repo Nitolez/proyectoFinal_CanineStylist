@@ -1,14 +1,18 @@
 import React from "react";
+import {Fade, Zoom, Roll} from 'react-reveal';
 
 const Personal = () => {
   return (
     <>
       <section className="personal">
+      <Zoom>
         <div className="fotoAlmu">
           <h2>Conoce a nuestra peluquera</h2>
           <h3>Almudena Fernandez García</h3>
           <img src="/personal1.jpg" alt="Almudena Fernandez García" />
         </div>
+        </Zoom>
+        <Roll>
         <div className="cv">
           <img src="/personal2.jpg" alt="Almudena Fernandez García" />
           <p>
@@ -40,6 +44,7 @@ const Personal = () => {
             deseando conocer a tu mascota!
           </p>
         </div>
+        </Roll>
       </section>
     </>
   );

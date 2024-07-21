@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
+import {Bounce} from 'react-reveal';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,20 +17,22 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/login', 
         { email, password },
         { withCredentials: true }
+        //indicar que se deben enviar cookies
       );
       if (response.data.success) {
         const userType = response.data.userType;
         setUserType(userType);
         navigate('/');
       } else {
-        alert('Invalid email or password');
+        alert('Email o contraseña incorrectos');
       }
     } catch (error) {
-      console.error('There was an error!', error);
+      console.error('Ha habido un error con tu solicitud', error);
     }
   };
 
   return (
+    <Bounce>
     <section className="login">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -39,6 +42,7 @@ const Login = () => {
       </form>
       <a href="/registro">Registrarse</a>
     </section>
+    </Bounce>
   );
 };
 
