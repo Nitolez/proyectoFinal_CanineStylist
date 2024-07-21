@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Nav = ({ menuOpen }) => {
+const ClientNav = ({ handleLogout, menuOpen }) => {
   return (
     <nav className={menuOpen ? 'open' : ''}>
       <ul>
@@ -20,11 +20,14 @@ const Nav = ({ menuOpen }) => {
           <Link to="/contacto">CONTACTO</Link>
         </li>
         <li>
-          <Link to="/login">LOGIN</Link>
+          <Link to="/perfil">PERFIL</Link>
+        </li>
+        <li>
+          <Link to="/" onClick={handleLogout}>LOGOUT</Link>
         </li>
       </ul>
     </nav>
   );
 };
 
-export default Nav;
+export default ClientNav;

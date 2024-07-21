@@ -10,7 +10,7 @@ const RazaForm = ({ setRaza }) => {
   };
 
   return (
-    <div>
+    <article className="razaForm">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -21,7 +21,7 @@ const RazaForm = ({ setRaza }) => {
         />
         <button type="submit">Buscar</button>
       </form>
-    </div>
+    </article>
   );
 };
 
