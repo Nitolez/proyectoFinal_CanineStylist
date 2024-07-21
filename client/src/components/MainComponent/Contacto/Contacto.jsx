@@ -25,7 +25,7 @@ const Contacto = () => {
           <div className="cardDato">
             <img src="/telefono.png" alt="Icono telefono" />
             <h2>Telefono</h2>
-            <p>+34 653 07 27 99</p>
+            <p>+34 639 146 091</p>
           </div>
         </article>
         <Mapa />
