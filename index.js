@@ -10,7 +10,7 @@ const { Pool } = require('pg');
 const pool = require('./config/db.js');
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://tu-frontend-en-render.com',
   credentials: true
 }));
 

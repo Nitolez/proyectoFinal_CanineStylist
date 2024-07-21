@@ -3,12 +3,19 @@ services:
     name: backend
     env: node
     buildCommand: "npm install"
-    startCommand: "npm run dev"
+    startCommand: "npm start"
     plan: free
     port: 3000
+    envVars:
+      - key: DATABASE_URL
+        value: tu_base_de_datos_url
+    healthCheckPath: "/api/health"
 
   - type: static
     name: frontend
     buildCommand: "npm install && npm run build"
-    publishDirectory: "client/dist"
+    publishDirectory: "dist"
     plan: free
+    envVars:
+      - key: VITE_API_URL
+        value: url-de-tu-backend-en-render
