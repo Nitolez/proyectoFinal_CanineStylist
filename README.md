@@ -1,7 +1,7 @@
 
 # Canine Stylist - "¡Porque tu mejor amigo merece lucir increíble! 🐾✨"
 
-<a href="https://proyectofinal-caninestylist.onrender.com/" target="_blank"> <img src="./public/tituloLogo.png"/></a> 
+<a href="https://proyectofinal-caninestylist.onrender.com/" target="_blank"> <img src="./client/public/tituloLogo.png"/></a> 
 
 Bienvenido al repositorio de la aplicación de gestión de una peluquería canina. Esta aplicación permite la gestión de clientes, servicios y razas de perros, además de la autenticación y autorización de usuarios. Está construida utilizando React para el frontend y Express para el backend, con una base de datos SQL para almacenar la información.
 
