@@ -1,3 +1,16 @@
+/**
+ * @file app.js
+ * @description Configuración y arranque del servidor Express.
+ * @requires express
+ * @requires cors
+ * @requires express-session
+ * @requires cookie-parser
+ * @requires body-parser
+ * @requires bcrypt
+ * @requires pg
+ * @requires ./config/db.js
+ */
+
 const express = require("express");
 const app = express(); // Inicializar servidor
 const port = 3000; // Puerto del servidor backend
@@ -9,6 +22,9 @@ const bcrypt = require('bcrypt');
 const { Pool } = require('pg');
 const pool = require('./config/db.js');
 
+/**
+ * Configuración de CORS para permitir solicitudes desde el frontend.
+ */
 app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
@@ -18,6 +34,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+/**
+ * Configuración de la sesión.
+ */
 app.use(session({
   secret: 'secret-key',
   resave: false,
@@ -26,7 +45,6 @@ app.use(session({
 }));
 
 app.use(express.json()); 
-
 app.use(express.static('public'));
 
 // Middlewares
@@ -42,7 +60,13 @@ app.use('/api/razas', rutasRazas);
 app.use('/api/servicios', rutasServicios);
 app.use('/api/usuarios', rutasUsuarios);
 
-// Ruta de Login
+/**
+ * @route POST /login
+ * @description Ruta para el inicio de sesión de usuarios.
+ * @param {string} email Email del usuario
+ * @param {string} password Contraseña del usuario
+ * @returns {Object} Respuesta con el tipo de usuario si el inicio de sesión es exitoso
+ */
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -69,7 +93,11 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Ruta de Logout
+/**
+ * @route POST /logout
+ * @description Ruta para cerrar la sesión del usuario.
+ * @returns {Object} Respuesta indicando el éxito del cierre de sesión
+ */
 app.post('/logout', (req, res) => {
   req.session.destroy();
   res.clearCookie('userType');
@@ -79,7 +107,10 @@ app.post('/logout', (req, res) => {
 // Invocar middleware
 app.use(error404); // Middleware para manejo de 404
 
-const server = app.listen(port, () => { // Servidor está escuchando en este puerto variable port
+/**
+ * Inicia el servidor y escucha en el puerto especificado.
+ */
+const server = app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}`);
 });
 

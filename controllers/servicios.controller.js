@@ -1,8 +1,27 @@
+/**
+ * @author Antonio González Torres
+ * @exports manage404
+ * @namespace Controllers
+ */
+/**
+ * @namespace Controllers
+ * @description Controladores para manejar las rutas web relacionadas con los servicios.
+ * @requires ../models/servicios.model
+ * @requires express-validator
+ */
+
 const servicio = require('../models/servicios.model');
 const { validationResult } = require('express-validator');
 
-
-//GET 
+/**
+ * @function getAllServicios
+ * @description Obtiene todos los servicios de la base de datos.
+ * @memberof Controllers
+ * @param {Object} req Objeto de solicitud
+ * @param {Object} res Objeto de respuesta
+ * @async
+ * @throws {Error} Error en la consulta a la base de datos
+ */
 const getAllServicios = async (req, res) => {
     try {
         const servicios = await servicio.getAllServicios();
@@ -12,7 +31,15 @@ const getAllServicios = async (req, res) => {
     }
 };
 
-//GET by nombre
+/**
+ * @function getServicioByNombre
+ * @description Obtiene un servicio por su nombre.
+ * @memberof Controllers
+ * @param {Object} req Objeto de solicitud
+ * @param {Object} res Objeto de respuesta
+ * @async
+ * @throws {Error} Error en la consulta a la base de datos
+ */
 const getServicioByNombre = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -24,15 +51,22 @@ const getServicioByNombre = async (req, res) => {
         if (servicioEncontrado) {
             res.status(200).json(servicioEncontrado);
         } else {
-            res.status(404).json({ error: 'servicio no encontrado' });
+            res.status(404).json({ error: 'Servicio no encontrado' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-//POST
-
+/**
+ * @function createServicio
+ * @description Crea un nuevo servicio en la base de datos.
+ * @memberof Controllers
+ * @param {Object} req Objeto de solicitud
+ * @param {Object} res Objeto de respuesta
+ * @async
+ * @throws {Error} Error en la consulta a la base de datos
+ */
 const createServicio = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -47,8 +81,15 @@ const createServicio = async (req, res) => {
     }
 };
 
-//PUT 
-
+/**
+ * @function updateServicioByNombre
+ * @description Actualiza un servicio en la base de datos por su nombre.
+ * @memberof Controllers
+ * @param {Object} req Objeto de solicitud
+ * @param {Object} res Objeto de respuesta
+ * @async
+ * @throws {Error} Error en la consulta a la base de datos
+ */
 const updateServicioByNombre = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -61,15 +102,22 @@ const updateServicioByNombre = async (req, res) => {
         if (servicioActualizado) {
             res.status(200).json(servicioActualizado);
         } else {
-            res.status(404).json({ error: 'servicio no encontrado' });
+            res.status(404).json({ error: 'Servicio no encontrado' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-//DELETE 
-
+/**
+ * @function deleteServicioByNombre
+ * @description Elimina un servicio de la base de datos por su nombre.
+ * @memberof Controllers
+ * @param {Object} req Objeto de solicitud
+ * @param {Object} res Objeto de respuesta
+ * @async
+ * @throws {Error} Error en la consulta a la base de datos
+ */
 const deleteServicioByNombre = async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -79,9 +127,9 @@ const deleteServicioByNombre = async (req, res) => {
         const { nombre } = req.params;
         const result = await servicio.deleteServicioByNombre(nombre);
         if (result > 0) {
-            res.status(200).json({ message: 'servicio eliminado' });
+            res.status(200).json({ message: 'Servicio eliminado' });
         } else {
-            res.status(404).json({ error: 'servicio no encontrado' });
+            res.status(404).json({ error: 'Servicio no encontrado' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
