@@ -5,3 +5,10 @@
         font-size: 40px;
     }
 }
+@media (max-width: 768px){
+    .servicios{
+        &>h2{
+            font-size: 30px;
+        }
+    }
+}

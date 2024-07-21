@@ -6,3 +6,11 @@
         padding-bottom: 40px;
     }
 }
+
+@media (max-width: 768px){
+    .valoraciones{
+        &>h2{
+            font-size: 30px;
+        }
+    }
+}
