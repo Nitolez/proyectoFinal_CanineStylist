@@ -8,20 +8,18 @@ Bienvenido al repositorio de la aplicación de gestión de una peluquería canin
 ## Descripción del Proyecto
 Esta aplicación está diseñada para facilitar la gestión de una peluquería canina. Permite a los administradores gestionar los datos de clientes, razas de perros y servicios ofrecidos. Los usuarios pueden registrarse, iniciar sesión y ver su perfil, así como explorar los servicios y precios de los cortes de pelo según la raza de su perro.
 ## Funcionalidades Principales
-
-- **Gestión de Clientes:** Los administradores pueden crear, leer, actualizar y eliminar información de los clientes.
   
 - **Autenticación y autorización de usuarios:** Implementa un sistema de registro y login para los usuarios, permitiendo que los clientes gestionen su información personal.
 
-- **Gestión de Razas:** Los administradores pueden crear, leer, actualizar y eliminar razas de perros.
+- **Gestión de Razas:** Los administradores pueden crear y leer razas de perros.
   
-- **Información sobre razas:** Se proporciona información detallada sobre diferentes razas de perros, incluyendo nombre, tamaño y características especiales.
+- **Información sobre razas:** Se proporciona información detallada sobre diferentes razas de perros, incluyendo descripción y precio del servicio para cada raza.
 
-- **Gestión de Servicios:** Los administradores pueden crear, leer, actualizar y eliminar servicios ofrecidos por la peluquería.
+- **Gestión de Servicios:** Los administradores pueden crear y leer servicios ofrecidos por la peluquería.
 
 - **Tipos de corte disponibles:** Se detallan los diferentes tipos de corte (stripping, corte a máquina, corte a tijera).
 
-- **Detalles del servicio:** Incluye descripción del servicio y la duración estimada.
+- **Detalles del servicio:** Incluye descripción del servicio y el precio estimado por raza.
 
 ## Estructura de la Base de Datos
 
