@@ -1,0 +1,21 @@
+@import "../utils/variables.scss";
+
+.serviciosList{
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px){
+    .serviciosList{
+        margin: 10px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: 40px;
+    }
+}

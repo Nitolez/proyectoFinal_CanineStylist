@@ -1,0 +1,58 @@
+@import "../utils/variables.scss";
+
+.colaboradoresDiv{
+    &>h2{
+        text-align: center;
+        padding: 40px 0px;
+        margin-top: 90px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 30px;
+        color: $azulOscuro;
+        background-color: $rosaClaro;
+        border: 3px solid $rosaOscuro;
+        border-radius: 70px;
+    }
+}
+
+.colaboradores{
+    margin-left: -53px;
+    margin-right: -53px;
+    background-color: $rosaClaro;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    -webkit-box-shadow: 0px 0px 18px 1px grey;
+    -moz-box-shadow: 0px 0px 18px 1px rgb(38, 35, 35);
+    box-shadow: 0px 0px 18px 1px grey;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 40px;
+    
+}
+
+.artero, .naturalGreatness{
+
+    text-align: center;
+
+    &>a>img{
+        width: 450px;
+        padding: 40px 2px;
+    }
+}
+
+@media (max-width: 768px){
+    .colaboradores{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &>.artero, .naturalGreatness{
+            &>a>img{
+                width: 100%;
+            }
+        }
+    }
+}

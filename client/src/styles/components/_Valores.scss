@@ -1,0 +1,73 @@
+@import "../utils/variables.scss";
+
+.valores{
+    margin-left: -53px;
+    margin-right: -53px;
+    background-color: $rosaClaro;
+    padding: 50px 80px;
+    -webkit-box-shadow: 0px 0px 18px 1px grey;
+    -moz-box-shadow: 0px 0px 18px 1px rgb(38, 35, 35);
+    box-shadow: 0px 0px 18px 1px grey;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &>.valoresContainer{
+        flex: 1;
+        &>img{
+            -webkit-box-shadow: 0px 0px 18px 1px grey;
+            -moz-box-shadow: 0px 0px 18px 1px rgb(38, 35, 35);
+            box-shadow: 0px 0px 18px 1px grey;
+            width: 80%;
+            border-radius: 20px;
+        }
+        
+    }
+    &>.valoresText{
+            width: 50%;
+            text-align: center;
+        
+        &>h2{
+            font-size: 20px;
+            margin-top: 20px;
+            color: $azulClaro;
+        }
+        &>p{
+            font-size: 15px;
+            margin-top: 20px;
+            color: $azulOscuro;
+        }
+        &>.fotoValores{
+            -webkit-box-shadow: 0px 0px 18px 1px grey;
+            -moz-box-shadow: 0px 0px 18px 1px rgb(38, 35, 35);
+            box-shadow: 0px 0px 18px 1px grey;
+            width: 70%;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+    }
+}
+@media (max-width: 768px){
+    .valores{
+        flex-direction: column;
+        padding: 20px 40px;
+        &>.valoresContainer{
+            &>img{
+                width: 100%;
+            }
+        }
+        &>.valoresText{
+            width: 100%;
+            &>h2{
+                font-size: 15px;
+            }
+            &>p{
+                font-size: 12px;
+            }
+            &>.fotoValores{
+                width: 100%;
+            }
+        }
+    }
+}

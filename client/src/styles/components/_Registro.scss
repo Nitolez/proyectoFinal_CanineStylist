@@ -1,0 +1,57 @@
+@import "../utils/variables.scss";
+
+
+.registro{
+    padding-top: 120px;
+    background-color: $rosaClaro;
+    box-shadow: 0px 0px 18px 1px grey;
+    border-radius: 20px;
+    padding-bottom: 60px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+    color: $azulOscuro;
+    background-color: $rosaClaro;
+    border: 3px solid $rosaOscuro;
+    border-radius: 70px;
+    &>form{
+        display: flex;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        &>input{
+            width: 40%;
+            margin-bottom: 30px;
+            background-color: $azulClaro;
+        }
+        &>button{
+            width: 20%;
+            height: 40px;
+            margin-bottom: 40px;
+            background-color: $rosaOscuro;
+        }
+        &>a{
+            color: $azulOscuro;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .registro{
+        font-size: 10px;
+        &>form{
+            &>input{
+                width: 80%;
+            }
+            &>button{
+                width: 40%;
+            }
+        }
+    }
+}

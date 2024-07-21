@@ -1,0 +1,38 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+.razaCard {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  & > h2 {
+    display: flex;
+    margin: 0;
+    padding-bottom: 10px;
+    justify-content: space-around;
+    padding-top: 10px;
+    background-color: $rosaOscuro;
+    border-top-right-radius: 17px;
+    border-top-left-radius: 17px;
+    color: white;
+  }
+  &>p{
+    padding: 10px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .razaCard {
+    width: 100%;
+    height: 100%;
+  }
+}
