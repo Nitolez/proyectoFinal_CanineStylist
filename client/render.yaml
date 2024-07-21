@@ -19,3 +19,4 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://caninestylistapi.onrender.com
+ 
