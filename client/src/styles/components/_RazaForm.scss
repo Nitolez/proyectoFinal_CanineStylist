@@ -52,3 +52,13 @@ input{
     background-color: grey;
     color: white;
 }
+
+@media (max-width: 768px){
+    input{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    button{
+        width: 50%;
+    }
+}

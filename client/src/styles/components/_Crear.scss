@@ -46,3 +46,20 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .crear {
+    & > .crearServicios, .crearRazas {
+      & > form {
+        & > div {
+          & > input {
+            width: 240px;
+          }
+        }
+        & > button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

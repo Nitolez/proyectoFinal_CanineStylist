@@ -27,8 +27,26 @@
             padding-right: 50px;
         }
         &>p{
-            text-align: justify;
+            text-align: center;
             margin-bottom: 20px;
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .personal{
+        &>.fotoAlmu{
+            &>img{
+                width: 100%;
+            }
+        }
+        &>.cv{
+            flex-direction: column;
+            &>img{
+                width: 100%;
+                padding-right: 0;
+            }
         }
     }
 }

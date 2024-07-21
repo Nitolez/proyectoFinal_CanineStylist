@@ -57,3 +57,58 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    .contacto{
+        .horario{
+            padding: 20px;
+            &>img{
+                border-radius: 50px;
+                width: 100%;
+            }
+        }
+        .datos{
+            padding: 20px;
+            &>h2{
+                margin-bottom: 20px;
+            }
+            &>div{
+                &>img{
+                    width: 30px;
+                    margin-right: 10px;
+                }
+                &>h2{
+                    padding-right: 10px;
+                }
+                &>p{
+                    font-size: 15px;
+                }
+                &>a{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .contacto{
+        .datos{
+            &>div{
+                &>img{
+                    width: 20px;
+                    margin-right: 10px;
+                }
+                &>h2{
+                    padding-right: 10px;
+                }
+                &>p{
+                    font-size: 10px;
+                }
+                &>a{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

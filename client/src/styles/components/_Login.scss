@@ -34,3 +34,16 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    .login{
+        &>form{
+            &>input{
+                width: 80%;
+            }
+            &>button{
+                width: 40%;
+            }
+        }
+    }
+}

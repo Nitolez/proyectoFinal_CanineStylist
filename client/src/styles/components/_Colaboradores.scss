@@ -31,3 +31,17 @@
         padding: 40px 2px;
     }
 }
+
+@media (max-width: 768px){
+    .colaboradores{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &>.artero, .naturalGreatness{
+            &>a>img{
+                width: 100%;
+            }
+        }
+    }
+}
