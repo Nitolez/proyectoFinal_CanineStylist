@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
+import {Bounce} from 'react-reveal';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,6 +32,7 @@ const Login = () => {
   };
 
   return (
+    <Bounce>
     <section className="login">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -40,6 +42,7 @@ const Login = () => {
       </form>
       <a href="/registro">Registrarse</a>
     </section>
+    </Bounce>
   );
 };
 
