@@ -1,6 +1,6 @@
 const express = require("express");
-const app = express(); // Inicializar servidor
-const port = 3000; // Puerto del servidor backend
+const app = express();
+const port = 3000;
 const cors = require('cors');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -9,8 +9,20 @@ const bcrypt = require('bcrypt');
 const { Pool } = require('pg');
 const pool = require('./config/db.js');
 
+const allowedOrigins = [
+  'https://caninestylist.onrender.com',
+  'https://proyectofinal-caninestylist.onrender.com'
+];
+
 app.use(cors({
-  origin: 'https://caninestylist.onrender.com',
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true
 }));
 
@@ -25,24 +37,19 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-app.use(express.json()); 
-
+app.use(express.json());
 app.use(express.static('public'));
 
-// Middlewares
 const error404 = require("./middlewares/error404");
 
-// Importar Rutas API
 const rutasRazas = require('./routes/razas.routes');
 const rutasServicios = require('./routes/servicios.routes');
 const rutasUsuarios = require('./routes/usuarios.routes');
 
-// Rutas API
 app.use('/api/razas', rutasRazas);
 app.use('/api/servicios', rutasServicios);
 app.use('/api/usuarios', rutasUsuarios);
 
-// Ruta de Login
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -69,17 +76,15 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Ruta de Logout
 app.post('/logout', (req, res) => {
   req.session.destroy();
   res.clearCookie('userType');
   res.json({ success: true });
 });
 
-// Invocar middleware
-app.use(error404); // Middleware para manejo de 404
+app.use(error404);
 
-const server = app.listen(port, () => { // Servidor está escuchando en este puerto variable port
+const server = app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}`);
 });
 
