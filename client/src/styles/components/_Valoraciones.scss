@@ -1,8 +1,16 @@
 
 .valoraciones{
-    padding: 80px;
+    padding: 20px;
     &>h2{
         text-align: center;
         padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px){
+    .valoraciones{
+        &>h2{
+            font-size: 30px;
+        }
     }
 }

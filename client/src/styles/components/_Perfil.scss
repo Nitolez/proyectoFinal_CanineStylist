@@ -51,3 +51,18 @@
     }
     
 }
+
+@media (max-width: 768px){
+    .perfil{
+        &>form{
+            &>div{
+                &>input{
+                    width: 240px;
+                }
+            }
+            &>button{
+                width: 100%;
+            }
+        }
+    }
+}
