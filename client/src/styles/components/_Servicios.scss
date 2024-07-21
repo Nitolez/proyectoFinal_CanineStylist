@@ -1,8 +1,15 @@
+@import "../utils/variables.scss";
+
 .servicios{
     &>h2{
         text-align: center;
-        padding: 40px;
+        padding: 20px;
         font-size: 40px;
+        margin-top: 40px;
+        color: $azulOscuro;
+        background-color: $rosaClaro;
+        border: 3px solid $rosaOscuro;
+        border-radius: 70px;
     }
 }
 @media (max-width: 768px){

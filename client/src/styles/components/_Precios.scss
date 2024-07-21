@@ -2,8 +2,14 @@
 .precios{
     &>h2{
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+        font-size: 30px;
+        color: $azulOscuro;
+        background-color: $rosaClaro;
+        border: 3px solid $rosaOscuro;
+        border-radius: 70px;
+        padding: 20px 50px;
     }
 }
 @media (max-width: 768px){

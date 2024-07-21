@@ -5,7 +5,8 @@ const Personal = () => {
     <>
       <section className="personal">
         <div className="fotoAlmu">
-          <h2>Almudena Fernandez García</h2>
+          <h2>Conoce a nuestra peluquera</h2>
+          <h3>Almudena Fernandez García</h3>
           <img src="/personal1.jpg" alt="Almudena Fernandez García" />
         </div>
         <div className="cv">
