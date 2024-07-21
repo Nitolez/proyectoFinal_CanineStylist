@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ServiciosCard from "./ServiciosCard";
 import { v4 as uuidv4 } from "uuid";
 import { ProgressBar } from 'react-loader-spinner';
-import { API_URL } from '../../../../config/config'; 
+import { API_URL } from '../../../../../config/config'
 
 const ServiciosList = () => {
   const [servicios, setServicios] = useState([]);
