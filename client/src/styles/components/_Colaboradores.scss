@@ -1,7 +1,17 @@
+@import "../utils/variables.scss";
+
 .colaboradoresDiv{
     &>h2{
         text-align: center;
-        padding-bottom: 40px;
+        padding: 40px 0px;
+        margin-top: 90px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 30px;
+        color: $azulOscuro;
+        background-color: $rosaClaro;
+        border: 3px solid $rosaOscuro;
+        border-radius: 70px;
     }
 }
 
@@ -19,6 +29,7 @@
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
+    margin-bottom: 40px;
     
 }
 
