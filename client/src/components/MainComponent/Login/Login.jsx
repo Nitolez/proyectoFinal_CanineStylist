@@ -16,16 +16,17 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/login', 
         { email, password },
         { withCredentials: true }
+        //indicar que se deben enviar cookies
       );
       if (response.data.success) {
         const userType = response.data.userType;
         setUserType(userType);
         navigate('/');
       } else {
-        alert('Invalid email or password');
+        alert('Email o contraseña incorrectos');
       }
     } catch (error) {
-      console.error('There was an error!', error);
+      console.error('Ha habido un error con tu solicitud', error);
     }
   };
 

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Canine Stylist - &quot;¡Porque tu mejor amigo merece lucir increíble! 🐾✨&quot;</h1>
+<p><a href="https://proyectofinal-caninestylist.onrender.com/" target="_blank"> <img src="./client/public/tituloLogo.png"/></a></p>
+<p>Bienvenido al repositorio de la aplicación de gestión de una peluquería canina. Esta aplicación permite la gestión de clientes, servicios y razas de perros, además de la autenticación y autorización de usuarios. Está construida utilizando React para el frontend y Express para el backend, con una base de datos SQL para almacenar la información.</p>
+<h2>Descripción del Proyecto</h2>
+<p>Esta aplicación está diseñada para facilitar la gestión de una peluquería canina. Permite a los administradores gestionar los datos de clientes, razas de perros y servicios ofrecidos. Los usuarios pueden registrarse, iniciar sesión y ver su perfil, así como explorar los servicios y precios de los cortes de pelo según la raza de su perro.</p>
+<h2>Funcionalidades Principales</h2>
+<ul>
+<li>
+<p><strong>Autenticación y autorización de usuarios:</strong> Implementa un sistema de registro y login para los usuarios, permitiendo que los clientes gestionen su información personal.</p>
+</li>
+<li>
+<p><strong>Gestión de Razas:</strong> Los administradores pueden crear y leer razas de perros.</p>
+</li>
+<li>
+<p><strong>Información sobre razas:</strong> Se proporciona información detallada sobre diferentes razas de perros, incluyendo descripción y precio del servicio para cada raza.</p>
+</li>
+<li>
+<p><strong>Gestión de Servicios:</strong> Los administradores pueden crear y leer servicios ofrecidos por la peluquería.</p>
+</li>
+<li>
+<p><strong>Tipos de corte disponibles:</strong> Se detallan los diferentes tipos de corte (stripping, corte a máquina, corte a tijera).</p>
+</li>
+<li>
+<p><strong>Detalles del servicio:</strong> Incluye descripción del servicio y el precio estimado por raza.</p>
+</li>
+</ul>
+<h2>Estructura de la Base de Datos</h2>
+<h3>Usuarios</h3>
+<ul>
+<li><code>id_usuario</code> (PK, INT, AUTO_INCREMENT)</li>
+<li><code>nombre</code> (VARCHAR(100))</li>
+<li><code>email</code> (VARCHAR(100), UNIQUE)</li>
+<li><code>contraseña</code> (VARCHAR(100))</li>
+<li><code>telefono</code> (VARCHAR(20))</li>
+<li><code>direccion</code> (VARCHAR(200))</li>
+<li><code>tipo_usuario</code> (ENUM('cliente', 'admin'))</li>
+<li><code>puntos_descuento</code> (INT)</li>
+</ul>
+<h3>Servicios</h3>
+<ul>
+<li><code>id_servicio</code> (PK, INT, AUTO_INCREMENT)</li>
+<li><code>nombre</code> (VARCHAR(100))</li>
+<li><code>descripcion</code> (TEXT)</li>
+</ul>
+<h3>Razas</h3>
+<ul>
+<li><code>id_raza</code> (PK, INT, AUTO_INCREMENT)</li>
+<li><code>nombre</code> (VARCHAR(100))</li>
+<li><code>descripcion</code> (TEXT)</li>
+<li><code>precio</code> (DECIMAL(10, 2))</li>
+</ul>
+<h2>Configuración del Entorno de Desarrollo</h2>
+<h3>Prerrequisitos</h3>
+<ul>
+<li>Node.js</li>
+<li>npm</li>
+<li>PostgreSQL</li>
+</ul>
+<h3>Instalación</h3>
+<ol>
+<li>Clona el repositorio</li>
+<li>Instala las dependencias del backend y frontend:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm install
+cd client
+npm install
+</code></pre>
+<ol start="3">
+<li>
+<p>Configura las variables de entorno:
+Crea un archivo .env en la raíz del proyecto y añade las variables necesarias para la configuración de la base de datos y otros parámetros.</p>
+</li>
+<li>
+<p>Inicia el servidor:</p>
+</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm run dev
+cd client
+npm run dev
+</code></pre>
+<ol start="5">
+<li>Abre tu navegador y navega a http://localhost:5173 para ver la aplicación en funcionamiento.</li>
+</ol>
+<h2>Estructura del Proyecto</h2>
+<h3>Backend (Express)</h3>
+<ul>
+<li>Controllers: Contiene la lógica de las rutas.</li>
+<li>Models: Define la estructura de los datos y la lógica de interacción con la base de datos.</li>
+<li>Routes: Define los endpoints de la API.</li>
+<li>Middlewares: Maneja la autenticación y otros procesos intermedios.</li>
+<li>Config: Configuración de la base de datos y otras variables de entorno.</li>
+</ul>
+<h3>Frontend (React)</h3>
+<ul>
+<li>Components: Componentes reutilizables de la UI.</li>
+<li>Public: Imágenes y usables para la app.</li>
+<li>Styles: Archivos SASS para los estilos de la aplicación.</li>
+</ul>
+<h2>Support</h2>
+<p>Este proyecto está abierto a contribuciones. Si deseas mejorar la aplicación, realiza un fork del repositorio, haz tus cambios y envía un pull request. Asegúrate de seguir las buenas prácticas de desarrollo y prueba tus cambios antes de enviarlos.</p>
+<p>Para consultas, envia un email antonioglezt98@gmail.com.</p>
+<h2>Creado por</h2>
+<p>Antonio González Torres en el bootcamp de Desarrollo Web en The Bridge.</p></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>index.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Configuración y arranque del servidor Express.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:express</li>
+        
+            <li>module:cors</li>
+        
+            <li>module:express-session</li>
+        
+            <li>module:cookie-parser</li>
+        
+            <li>module:body-parser</li>
+        
+            <li>module:bcrypt</li>
+        
+            <li>module:pg</li>
+        
+            <li>module:./config/db.js</li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="Controllers.html">Controllers</a></li><li><a href="Models.html">Models</a></li></ul><h3>Global</h3><ul><li><a href="global.html#server">server</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sun Jul 21 2024 23:32:19 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
