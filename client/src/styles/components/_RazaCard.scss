@@ -29,3 +29,10 @@
     margin-top: 30px;
   }
 }
+
+@media (max-width: 768px) {
+  .razaCard {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -48,3 +48,26 @@
         }
     }
 }
+@media (max-width: 768px){
+    .valores{
+        flex-direction: column;
+        padding: 20px 40px;
+        &>.valoresContainer{
+            &>img{
+                width: 100%;
+            }
+        }
+        &>.valoresText{
+            width: 100%;
+            &>h2{
+                font-size: 15px;
+            }
+            &>p{
+                font-size: 12px;
+            }
+            &>.fotoValores{
+                width: 100%;
+            }
+        }
+    }
+}
