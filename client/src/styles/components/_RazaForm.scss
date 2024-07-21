@@ -1,18 +1,21 @@
 @import "../utils/variables.scss";
 
-input{
-    -webkit-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
-    box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
-    border-radius: 30px;
-    display: flex;
-    width: 50%;
-    height: 50px;
-    text-align: center;
-    justify-content: center;
-    background-color: grey;
-    color: white;
-}
+.razaForm{
+    &>input{
+        -webkit-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+        box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+        border-radius: 30px;
+        display: flex;
+        width: 50%;
+        height: 50px;
+        text-align: center;
+        justify-content: center;
+        background-color: grey;
+        color: white;
+    }
+    
+ }
 
 button{
     border-radius: 30px;
@@ -35,4 +38,17 @@ form{
     display: flex;
     justify-content: center;
     margin: 40px 0;
+}
+
+input{
+    -webkit-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 26px 1px rgba(0,0,0,0.75);
+    border-radius: 30px;
+    display: flex;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    background-color: grey;
+    color: white;
 }

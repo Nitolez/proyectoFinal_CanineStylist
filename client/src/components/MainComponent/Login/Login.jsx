@@ -1,35 +1,45 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// Login.jsx
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../../UserContext';
 
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { setUserType } = useContext(UserContext);
 
-const Login = ({setUser}) => {
-  const [value, setValue] = useState(""); // Para guardar el dato a buscar
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setUser(value);
-    setValue(e.target.value = "") 
+    try {
+      const response = await axios.post('http://localhost:3000/login', 
+        { email, password },
+        { withCredentials: true }
+      );
+      if (response.data.success) {
+        const userType = response.data.userType;
+        setUserType(userType);
+        navigate('/');
+      } else {
+        alert('Invalid email or password');
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
 
-  return <section className="login">
-    <h2>LOGIN</h2>
-    <form onSubmit={handleSubmit}>
-        <input 
-          type="text" 
-          value={value} 
-          onChange={(e) => setValue(e.target.value)}
-          name="topic" 
-          placeholder="Usuario..." 
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Contraseña..."
-        />
+  return (
+    <section className="login">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
         <button type="submit">Login</button>
-        <Link to="/registro">REGISTRATE</Link>
       </form>
-  </section>;
+      <a href="/registro">Registrarse</a>
+    </section>
+  );
 };
 
 export default Login;

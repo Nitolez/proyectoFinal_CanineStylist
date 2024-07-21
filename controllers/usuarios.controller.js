@@ -1,7 +1,7 @@
 const e = require('express');
 const usuario = require('../models/usuarios.model');
 const { validationResult } = require('express-validator');
-
+const bcrypt = require('bcrypt');
 
 //GET 
 const getAllUsuarios = async (req, res) => {
@@ -20,33 +20,40 @@ const getUsuarioByEmail = async (req, res) => {
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const { nombre } = req.params;
-        const usuarioEncontrado = await usuario.getUsuarioByEmail(nombre);
+        const { email } = req.params;
+        const usuarioEncontrado = await usuario.getUsuarioByEmail(email);
         if (usuarioEncontrado) {
             res.status(200).json(usuarioEncontrado);
         } else {
-            res.status(404).json({ error: 'usuario no encontrado' });
+            res.status(404).json({ error: 'Usuario no encontrado' });
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-//POST
 
+//POST
 const createUsuario = async (req, res) => {
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        const nuevoUsuario = req.body;
+        let { nombre, email, password, telefono, direccion } = req.body;
+        
+        // Encriptar la contraseña
+        const salt = await bcrypt.genSalt(10);
+        password = await bcrypt.hash(password, salt);
+        
+        const nuevoUsuario = { nombre, email, password, telefono, direccion };
         const usuarioCreado = await usuario.createUsuario(nuevoUsuario);
         res.status(201).json(usuarioCreado);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 //PUT 
 

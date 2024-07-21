@@ -7,6 +7,8 @@ import Precios from "./Precios";
 import Contacto from "./Contacto";
 import Login from "./Login";
 import Registro from "./Registro";
+import Perfil from "./Perfil";
+import Crear from "./Crear";
 
 const MainComponent = () => {
 
@@ -20,7 +22,9 @@ const MainComponent = () => {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/*" element={<Navigate to={"/"} />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/crear" element={<Crear />} />
+        <Route path="/*" element={"/"} />
       </Routes>
 
     </main>
